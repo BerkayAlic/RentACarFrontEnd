@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
-import { HttpClient } from '@angular/common/http';
-import { BrandResponseModel } from 'src/app/models/brandResponseModel';
+import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
   selector: 'app-brand',
@@ -11,18 +10,17 @@ import { BrandResponseModel } from 'src/app/models/brandResponseModel';
 export class BrandComponent implements OnInit {
 
   brands:Brand[]=[];
-  apiUrl = "https://localhost:5001/api/brands/getall"
+  
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private brandService:BrandService) { }
 
   ngOnInit(): void {
     this.getBrands();
   }
 
   getBrands(){
-    this.httpClient.get<BrandResponseModel>(this.apiUrl).subscribe((response) => {
-      this.brands = response.data}   
-  );
-  
-}
+   this.brandService.getBrands().subscribe(response=>{
+     this.brands = response.data
+   })
+  }
 }
