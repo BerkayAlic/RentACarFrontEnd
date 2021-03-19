@@ -6,4 +6,7 @@ export interface Car{
     modelYear:number;
     dailyPrice:number;
     descriptions:string;
+    brandId:number;
+    colorId:number;
+    
 }

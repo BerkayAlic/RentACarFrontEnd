@@ -9,6 +9,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     CustomerComponent,
     CarComponent,
     RentalComponent,
+    CarDetailComponent,
   ],
   imports: [
     BrowserModule,
